@@ -70,9 +70,36 @@ x_train=scaler.fit_transform(x_train)
 x_test=scaler.fit_transform(x_test)
 print(x_train.shape)
 
+## Deep Learning Model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
+model=Sequential()
 
+model.add(Dense(20,activation="relu"))
+model.add(Dense(20,activation="relu"))
+model.add(Dense(20,activation="relu"))
+model.add(Dense(20,activation="relu"))
 
+model.add(Dense(1))
 
+model.compile(optimizer="adam",loss="mse")
+
+model.fit(x=x_train,y=y_train,validation_data=(x_test,y_test),batch_size=250,epochs=250)
+
+LostData=pd.DataFrame(model.history.history)
+
+LostData.head()
+
+LostData.plot()
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+tahmindizisi=model.predict(x_test)
+print(tahmindizisi)
+mean_absolute_error(y_test,tahmindizisi)
+plt.scatter(y_test,tahmindizisi)
+
+model.save("FordModel.h5")
 
 
