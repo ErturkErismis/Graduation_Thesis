@@ -100,6 +100,6 @@ print(tahmindizisi)
 mean_absolute_error(y_test,tahmindizisi)
 plt.scatter(y_test,tahmindizisi)
 plt.show()
-model.save("FordModel.h5")
+model.save("MercModel.h5")
 import joblib
 joblib.dump(scaler, 'Mercscaler.save')
