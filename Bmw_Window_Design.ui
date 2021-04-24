@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BMW</class>
+ <widget class="QWidget" name="BMW">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>942</width>
+    <height>733</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BMW</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color:	#00ff7f;
+}
+QPushButton {
+    background-color: palegoldenrod;
+    border-width: 2px;
+    border-color: darkkhaki;
+    border-style: solid;
+    border-radius: 5;
+    padding: 3px;
+    min-width: 9ex;
+    min-height: 2.5ex;
+}
+
+QPushButton:hover {
+   background-color: khaki;
+}
+
+/* Increase the padding, so the text is shifted when the button is
+   pressed. */
+QPushButton:pressed {
+    padding-left: 5px;
+    padding-top: 5px;
+    background-color: #006600;
+}
+
+QLabel, QAbstractButton {
+    font: bold;
+}
+
+/* Mark mandatory fields with a brownish color. */
+.mandatory {
+    color: brown;
+}
+QComboBox, QLineEdit, QSpinBox, QTextEdit, QListView {
+   background-color: cornsilk;
+   selection-color: #0a214c; 
+   selection-background-color: #C19A6B;
+}
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>110</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>MODEL:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>170</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>YEAR:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>230</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TRANSMİSSİON:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>290</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>MİLE AGE:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>350</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>FUEL TYPE:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>410</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TAX:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>470</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>MPG:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ENGİNE SİZE:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Bmw_Model_Combo">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>110</y>
+     <width>131</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>0</number>
+   </property>
+   <property name="currentText">
+    <string/>
+   </property>
+   <property name="currentIndex">
+    <number>-1</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>1 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>8 Series</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>M2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>M3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>M4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>M5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>M6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>X7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Z3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Z4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>İ3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>İ8</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="Bmw_Trans_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>230</y>
+     <width>131</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>0</number>
+   </property>
+   <property name="currentIndex">
+    <number>-1</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>AUTOMATİC</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>MANUEL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>SEMİ-AUTO</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="Bmw_ftype_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>350</y>
+     <width>131</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>0</number>
+   </property>
+   <property name="currentIndex">
+    <number>-1</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>DİESEL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ELECTRİC</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>HYBRİD</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>OTHER</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PETROL</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_Year_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>170</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_mileage_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>290</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_tax_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>410</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_mpg_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>470</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_enginesize_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>530</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Bmw_calculate_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>610</y>
+     <width>151</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CALCULATE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Bmw_Clear_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>610</y>
+     <width>151</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CLEAR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>480</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PRİCE:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Bmw_price_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>480</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>490</y>
+     <width>31</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>£</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>360</y>
+     <width>471</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>You can sell your vehicle up or down for 3000£ from the result.</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>80</y>
+     <width>381</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/newPrefix/icons/BmwPP.jpg);</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
