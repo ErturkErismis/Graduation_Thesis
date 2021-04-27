@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>icons/FordPP.jpg</file>
     <file>icons/MercPP.png</file>
     <file>icons/BmwPP.jpg</file>
     <file>icons/AudiPP.jpg</file>
