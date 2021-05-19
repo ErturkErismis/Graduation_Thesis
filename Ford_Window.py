@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_Form(object):
+class Ui_Form2(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(942, 733)
@@ -224,4 +224,4 @@ class Ui_Form(object):
         self.label_9.setText(_translate("Form", "PRİCE:"))
         self.label_11.setText(_translate("Form", "£"))
 
-import icons_rc
+#import icons_rc
