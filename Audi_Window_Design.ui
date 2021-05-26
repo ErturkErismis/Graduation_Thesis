@@ -317,6 +317,9 @@ QComboBox, QLineEdit, QSpinBox, QTextEdit, QListView {
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
    <property name="readOnly">
     <bool>false</bool>
    </property>
