@@ -224,4 +224,4 @@ class Ui_Form2(object):
         self.label_9.setText(_translate("Form", "PRİCE:"))
         self.label_11.setText(_translate("Form", "£"))
 
-#import icons_rc
+import icons_rc

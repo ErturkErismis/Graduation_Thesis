@@ -244,7 +244,270 @@ def Audi_Calculate():
     ui2.lineEdit_6.setText(str(x))
     print(x)
 
+def Bmw_Calculate():
+    model=load_model("BmwModel.h5")
+    scaler=joblib.load("Bmwscaler.save")
 
+    Year=float(ui3.Bmw_Year_lineEdit.text())
+    Mage=float(ui3.Bmw_mileage_lineEdit.text())
+    tax =float(ui3.Bmw_tax_lineEdit.text())
+    Mpg=float(ui3.Bmw_mpg_lineEdit.text())
+    Enginesize=float(ui3.Bmw_enginesize_lineEdit.text())
+
+    if ui3.Bmw_Trans_comboBox.currentText() == "AUTOMATİC":
+        #Arr.append(1)
+        #Arr.append(0)
+        #Arr.append(0)
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,1,0,0]]
+    elif ui3.Bmw_Trans_comboBox.currentText() == "MANUEL":
+        #Arr.append(0)
+        #Arr.append(1)
+        #Arr.append(0)
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,1,0]]
+    elif ui3.Bmw_Trans_comboBox.currentText() == "SEMİ-AUTO":
+        #Arr.append(0)
+        #Arr.append(0)
+        #Arr.append(1)
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,0,1]]
+    if ui3.Bmw_ftype_comboBox.currentText() == "DİESEL":
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui3.Bmw_ftype_comboBox.currentText() == "ELECTRİC":
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui3.Bmw_ftype_comboBox.currentText() == "HYBRİD":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui3.Bmw_ftype_comboBox.currentText() == "OTHER":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+    elif ui3.Bmw_ftype_comboBox.currentText() == "PETROL":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+
+    if ui3.Bmw_Model_Combo.currentText() == "1 Series":
+        Arr2=[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui3.Bmw_Model_Combo.currentText() == "2 Series":
+        Arr2=[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui3.Bmw_Model_Combo.currentText() == "3 Series":
+        Arr2=[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui3.Bmw_Model_Combo.currentText() == "4 Series":
+        Arr2=[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "5 Series":
+        Arr2=[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "6 Series":
+        Arr2=[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "7 Series":
+        Arr2=[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "8 Series":
+        Arr2=[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "M2":
+        Arr2=[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "M3":
+        Arr2=[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "M4":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "M5":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "M6":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+        
+    elif ui3.Bmw_Model_Combo.currentText() == "X1":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X2":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X3":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X4":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X5":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X6":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "X7":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "Z3":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "Z4":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "İ3":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+
+    elif ui3.Bmw_Model_Combo.currentText() == "İ8":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+
+
+
+
+    Arr[0].extend(Arr2)
+    
+    #for x in Arr:
+       # print(x)
+    
+    #Arr=[[2014,31930,580,21.9,5.2,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]]
+
+    Arr=scaler.transform(Arr)
+
+    x=model.predict(Arr)
+
+    ui3.Bmw_price_lineEdit.setText(str(x[0][0]))
+    print(x)
+
+def Ford_Calculate():
+    model=load_model("FordModel.h5")
+    scaler=joblib.load("Fordscaler.save")
+
+    Year=float(ui5.Ford_Year_lineEdit.text())
+    Mage=float(ui5.Ford_mileage_lineEdit.text())
+    tax =float(ui5.Ford_tax_lineEdit.text())
+    Mpg=float(ui5.Ford_mpg_lineEdit.text())
+    Enginesize=float(ui5.Ford_enginesize_lineEdit.text())
+
+    if ui5.Ford_Trans_comboBox.currentText() == "AUTOMATİC":
+
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,1,0,0]]
+
+    elif ui5.Ford_Trans_comboBox.currentText() == "MANUEL":
+       
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,1,0]]
+
+    elif ui5.Ford_Trans_comboBox.currentText() == "SEMİ-AUTO":
+       
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,0,1]]
+
+    if ui5.Ford_ftype_comboBox.currentText()  == "DİESEL":
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui5.Ford_ftype_comboBox.currentText() == "ELECTRİC":
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui5.Ford_ftype_comboBox.currentText()  == "HYBRİD":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+    elif ui5.Ford_ftype_comboBox.currentText()  == "OTHER":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+    elif ui5.Ford_ftype_comboBox.currentText()  == "PETROL":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+
+    
+    Arr=scaler.transform(Arr)
+
+    x=model.predict(Arr)
+
+    ui5.Merc_price_lineEdit.setText(str(x[0][0]))
+    print(x)
+
+def Merc_Calculate():
+    model=load_model("MercModel.h5")
+    scaler=joblib.load("Mercscaler.save")
+
+    Year=float(ui4.Merc_Year_lineEdit.text())
+    Mage=float(ui4.Merc_mileage_lineEdit.text())
+    tax =float(ui4.Merc_tax_lineEdit.text())
+    Mpg=float(ui4.Merc_mpg_lineEdit.text())
+    Enginesize=float(ui4.Merc_enginesize_lineEdit.text())
+
+    if ui4.Merc_Trans_comboBox.currentText() == "AUTOMATİC":
+
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,1,0,0,0]]
+
+    elif ui4.Merc_Trans_comboBox.currentText() == "MANUEL":
+       
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,1,0,0]]
+
+    elif ui4.Merc_Trans_comboBox.currentText() == "OTHER":
+       
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,0,1,0]]
+    
+    elif ui4.Merc_Trans_comboBox.currentText() == "SEMİ-AUTO":
+       
+        Arr=[[Year,Mage,tax,Mpg,Enginesize,0,0,0,1]]
+
+
+    if ui4.Merc_ftype_comboBox.currentText()  == "DİESEL":
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        
+    elif ui4.Merc_ftype_comboBox.currentText()  == "HYBRİD":
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        
+    elif ui4.Merc_ftype_comboBox.currentText()  == "OTHER":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(1)
+        Arr[0].append(0)
+        
+    elif ui4.Merc_ftype_comboBox.currentText()  == "PETROL":
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+        Arr[0].append(0)
+
+    
+    Arr=scaler.transform(Arr)
+
+    x=model.predict(Arr)
+
+    ui4.Merc_price_lineEdit.setText(str(x[0][0]))
+    print(x)
 
 
 
@@ -258,8 +521,11 @@ ui.Merc_winbutton.clicked.connect(Merc_Win)
 ui2.pushButton_2.clicked.connect(Audi_Clear)
 ui2.pushButton.clicked.connect(Audi_Calculate)
 ui3.Bmw_Clear_pushButton.clicked.connect(Bmw_Clear)
+ui3.Bmw_calculate_pushButton.clicked.connect(Bmw_Calculate)
 ui4.Merc_Clear_pushButton.clicked.connect(Merc_Clear)
+ui4.Merc_calculate_pushButton.clicked.connect(Merc_Calculate)
 ui5.Ford_Clear_pushButton.clicked.connect(Ford_Clear)
+ui5.Ford_calculate_pushButton.clicked.connect(Ford_Calculate)
 
 
 

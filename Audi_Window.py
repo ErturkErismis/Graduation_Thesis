@@ -217,4 +217,4 @@ class Ui_Form(object):
         self.label_10.setText(_translate("Form", "You can sell your vehicle up or down for 3000£ from the result."))
         self.label_11.setText(_translate("Form", "£"))
 
-#import icons_rc
+import icons_rc

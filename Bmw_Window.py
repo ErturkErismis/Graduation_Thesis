@@ -227,4 +227,4 @@ class Ui_BMW(object):
         self.label_11.setText(_translate("BMW", "£"))
         self.label_10.setText(_translate("BMW", "You can sell your vehicle up or down for 3000£ from the result."))
 
-#import icons_rc
+import icons_rc
