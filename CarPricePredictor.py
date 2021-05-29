@@ -241,7 +241,7 @@ def Audi_Calculate():
 
     x=model.predict(Arr)
 
-    ui2.lineEdit_6.setText(str(x))
+    ui2.lineEdit_6.setText(str(x[0][0]))
     print(x)
 
 def Bmw_Calculate():
@@ -442,7 +442,77 @@ def Ford_Calculate():
         Arr[0].append(0)
         Arr[0].append(1)
 
+    if ui5.Ford_Model_Combo.currentText() == "B-MAX":
+        Arr2=[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
+    elif ui5.Ford_Model_Combo.currentText() == "C-MAX":
+        Arr2=[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui5.Ford_Model_Combo.currentText() == "ECOSPORT":
+        Arr2=[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui5.Ford_Model_Combo.currentText() == "EDGE":
+        Arr2=[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "ESCORT":
+        Arr2=[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "FİESTA":
+        Arr2=[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "FOCUS":
+        Arr2=[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "FUSİON":
+        Arr2=[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "GALAXY":
+        Arr2=[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "GRAND C-MAX":
+        Arr2=[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "GRAND TOURNEO CONNECT":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "KA":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "KA+":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+        
+    elif ui5.Ford_Model_Combo.currentText() == "KUGA":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "MONDEO":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "MUSTANG":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "PUMA":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "RANGER":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "S-MAX":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "STREETKA":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "TOURNEO CONNECT":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "TOURNEO CUSTOM":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+
+    elif ui5.Ford_Model_Combo.currentText() == "TRANSİT TOURNEO":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+
+
+    Arr[0].extend(Arr2)
     Arr=scaler.transform(Arr)
 
     x=model.predict(Arr)
@@ -501,7 +571,89 @@ def Merc_Calculate():
         Arr[0].append(0)
         Arr[0].append(0)
 
+    if ui4.Merc_Model_Combo.currentText() == "A CLASS":
+        Arr2=[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
+    elif ui4.Merc_Model_Combo.currentText() == "B CLASS":
+        Arr2=[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui4.Merc_Model_Combo.currentText() == "C CLASS":
+        Arr2=[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    elif ui4.Merc_Model_Combo.currentText() == "CL CLASS":
+        Arr2=[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "CLA CLASS":
+        Arr2=[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "CLC CLASS":
+        Arr2=[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "CLK":
+        Arr2=[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "CLS CLASS":
+        Arr2=[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "E CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "G CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "GL CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "GLA CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "GLB CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        
+    elif ui4.Merc_Model_Combo.currentText() == "GLC CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "GLE CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "GLS CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "M CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "R CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "S CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "SL CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "SLK":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "V CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "X CLASS":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "180":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "200":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+
+    elif ui4.Merc_Model_Combo.currentText() == "220":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+    elif ui4.Merc_Model_Combo.currentText() == "220":
+        Arr2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+
+    
+
+    Arr[0].extend(Arr2)
     Arr=scaler.transform(Arr)
 
     x=model.predict(Arr)
